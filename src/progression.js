@@ -74,5 +74,13 @@ function enregistrerResultat(apprenants, id, resultats){
   }
   return "apprenants untrouvable"
 }
+function rechercherApprenant(apprenants, recherche){
 
+  for(let i = 0; i < apprenants.length; i++){
 
+    if (apprenants[i].nomComplet.toLowerCase().includes(recherche.toLowerCase()))
+      return apprenants[i]
+  }
+  return "apprenant untrouvable"
+}
+console.log(rechercherApprenant(apprenants, "sara"))
