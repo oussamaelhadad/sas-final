@@ -83,4 +83,4 @@ function rechercherApprenant(apprenants, recherche){
   }
   return "apprenant untrouvable"
 }
-console.log(rechercherApprenant(apprenants, "sara"))
+
