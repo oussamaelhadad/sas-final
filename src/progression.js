@@ -172,15 +172,23 @@ function filtrerParNiveau (apprenants){
   }
   return resultats
 }
-function triterParProgression (apprenants){
+function trierParProgression (apprenants){
  let resultat = [...apprenants]
   
-  for(let i = 0; i < resultat.length; i++){
-    let progression1 =calculerProgression(resultat[i])
-    let progression2 = calculerProgression(resultat[i+1])
-    if(progression1.progression > progression2.progression){
+ for (let i = 0; i < resultat.length - 1; i++) {
 
-    }
+   for (let j = i + 1; j < resultat.length; j++) {
 
+   let progression1 = calculerProgression(resultat[i])
+   let progression2 = calculerProgression(resultat[j])
+
+  if (progression1.progression < progression2.progression) {
+
+  let temporaire = resultat[i]
+   resultat[i] = resultat[j]
+   resultat[j] = temporaire
   }
+  }
+}
+return resultat
 }
