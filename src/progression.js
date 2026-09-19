@@ -64,22 +64,22 @@ function ajouterApprenant(apprenants) {
 
 function enregistrerResultat(apprenants) {
 
-  let id = Number(prompt("Entrez l'ID de l'apprenant : "));
-  let jour = Number(prompt("Entrez le jour : "));
-  let exercicesTermines = Number(prompt("Entrez le nombre d'exercices terminés : "));
-  let challenge = prompt("Challenge terminé ? true/false");
+  let id = Number(prompt("Entrez l'ID de l'apprenant : "))
+  let jour = Number(prompt("Entrez le jour : "))
+  let exercicesTermines = Number(prompt("Entrez le nombre d'exercices terminés : "))
+  let challenge = prompt("Challenge terminé ? true/false : ")
 
-  let challengeTermines = challenge.toLowerCase() == "true";
+  let challengeTermine = challenge.toLowerCase() == "true"
 
   let resultats = {
     jour: jour,
     exercicesTermines: exercicesTermines,
     totalExercices: 20,
-    challengeTermines: challengeTermines
-  };
+    challengeTermine: challengeTermine
+  }
 
   if (validerResultat(resultats) != true){
-    return "resultat non valide";
+    return "resultat non valide"
   }
     
 
@@ -94,12 +94,12 @@ function enregistrerResultat(apprenants) {
           return true;
         }
       }
-      apprenants[i].resultats.push(resultats);
-      return true;
+      apprenants[i].resultats.push(resultats)
+      return true
     }
   }
 
-  return "apprenant introuvable";
+  return "apprenant introuvable"
 }
 
 function rechercherApprenant(apprenants) {
@@ -109,7 +109,7 @@ function rechercherApprenant(apprenants) {
   for (let i = 0; i < apprenants.length; i++) {
    
     if (apprenants[i].id === Number(recherche) ||apprenants[i].nomComplet.toLowerCase().includes(recherche.toLowerCase())){
-      return apprenants[i];
+      return apprenants[i]
     }
   }
   return "apprenant introuvable"
@@ -147,14 +147,14 @@ else{
   niveau = "À renforcer"
 }
 
-return {
+return [{
   progression : progression,
   niveau : niveau,
   totaleExercicestermines : totaleExercicestermines,
   totaleExercicesProposes : totaleExercicesProposes,
   totaleChallengestermines : totaleChallengestermines,
   JournéesRenseignées : JournéesRenseignées
-}
+}]
 }
 
 function filtrerParNiveau (apprenants){
@@ -175,20 +175,35 @@ function filtrerParNiveau (apprenants){
 function trierParProgression (apprenants){
  let resultat = [...apprenants]
   
- for (let i = 0; i < resultat.length - 1; i++) {
+ for (let i = 0; i < resultat.length - 1; i++){
 
-   for (let j = i + 1; j < resultat.length; j++) {
+   for (let j = i + 1; j < resultat.length; j++){
 
    let progression1 = calculerProgression(resultat[i])
    let progression2 = calculerProgression(resultat[j])
 
-  if (progression1.progression < progression2.progression) {
+  if (progression1.progression < progression2.progression){
 
-  let temporaire = resultat[i]
+  let variable = resultat[i]
    resultat[i] = resultat[j]
-   resultat[j] = temporaire
+   resultat[j] = variable
   }
+  if (progression1.progression == progression2.progression){
+  
+    if (resultat[i].nomComplet.toLowerCase() > resultat[j].nomComplet.toLowerCase()){
+   
+    let variable1 = resultat[j]
+        resultat[j] = resultat[i]
+        resultat[i] = variable1
+   }
+    
   }
 }
-return resultat
+}
+ return resultat
+}
+function afficherTableauDeBord(apprenants){
+  for(let i = 0; i < apprenants.length; i++)|{
+    
+  }
 }
