@@ -147,14 +147,14 @@ else{
   niveau = "À renforcer"
 }
 
-return [{
+return {
   progression : progression,
   niveau : niveau,
   totaleExercicestermines : totaleExercicestermines,
   totaleExercicesProposes : totaleExercicesProposes,
   totaleChallengestermines : totaleChallengestermines,
   JournéesRenseignées : JournéesRenseignées
-}]
+}
 }
 
 function filtrerParNiveau (apprenants){
@@ -168,10 +168,10 @@ function filtrerParNiveau (apprenants){
     if(resultat.niveau.toLowerCase()===(niveau)){
       resultats.push(apprenants[i])
     }
-
   }
   return resultats
 }
+
 function trierParProgression (apprenants){
  let resultat = [...apprenants]
   
@@ -202,8 +202,6 @@ function trierParProgression (apprenants){
 }
  return resultat
 }
+
 function afficherTableauDeBord(apprenants){
-  for(let i = 0; i < apprenants.length; i++)|{
-    
-  }
 }
