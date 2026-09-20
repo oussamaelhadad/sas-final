@@ -51,6 +51,25 @@ const apprenants = [
         }
     ]
   },
+  {
+    id: 4,
+    nomComplet: "Amira zirari",
+    ville: "Tetouan",
+    resultats: [
+      {
+        jour: 1,
+        exercicesTermines: 20,
+        totalExercices: 20,
+        challengeTermine: true
+      },
+      {
+        jour: 2,
+        exercicesTermines: 19,
+        totalExercices: 20,
+        challengeTermine: true
+      }
+    ]
+  }
 ];
 
 module.exports = apprenants;
