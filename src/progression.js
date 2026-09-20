@@ -1,4 +1,5 @@
-const apprenants = require("./data")
+const apprenants = require('./data.js')
+
 const prompt = require("prompt-sync")();
 
 function normaliserNom(nom){
@@ -203,5 +204,43 @@ function trierParProgression (apprenants){
  return resultat
 }
 
-function afficherTableauDeBord(apprenants){
+function afficherListe(apprenants){
+  for(let i = 0; i < apprenants.length; i++){
+      console.log(apprenants[i]);
+    
+
+  }
 }
+
+function trierParNom(apprenants){
+  let resultat = [...apprenants]
+ 
+  for(let i = 0; i < resultat.length; i++){
+   
+    for (let j = i+1; j < resultat.length; j++){
+     
+      if(resultat[i].nomComplet.toLowerCase() > resultat[j].nomComplet.toLowerCase()){
+        let variable = resultat[i]
+        resultat[i] = resultat[j]
+        resultat[j] = variable
+      }
+    }
+  }
+  return resultat
+} 
+
+module.exports = {
+    normaliserNom,
+    validerResultat,
+    ajouterApprenant,
+    enregistrerResultat,
+    rechercherApprenant,
+    calculerProgression,
+    filtrerParNiveau,
+    trierParProgression,
+    afficherListe,
+    trierParNom
+}
+
+
+    

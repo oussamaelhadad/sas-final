@@ -31,7 +31,26 @@ const apprenants = [
         challengeTermine: false
       }
     ]
-  }
+  },
+  {
+    id: 3,
+    nomComplet: "Amal Alaoui",
+    ville: "Tanger",
+    resultats: [
+        {
+            jour: 1,
+            exercicesTermines: 18,
+            totalExercices: 20,
+            challengeTermine: true
+        },
+        {
+            jour: 2,
+            exercicesTermines: 14,
+            totalExercices: 20,
+            challengeTermine: false
+        }
+    ]
+  },
 ];
 
 module.exports = apprenants;

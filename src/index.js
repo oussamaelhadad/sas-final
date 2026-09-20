@@ -1,3 +1,19 @@
+const prompt = require("prompt-sync")()
+
+const apprenants = require('./data.js')
+
+const {
+    normaliserNom,
+    validerResultat,
+    ajouterApprenant,
+    enregistrerResultat,
+    rechercherApprenant,
+    calculerProgression,
+    filtrerParNiveau,
+    trierParProgression,
+    afficherListe,
+    trierParNom
+} = require("./progression")
 let choix = prompt(`
 SAS PROGRESS CONSOLE
 
@@ -18,33 +34,30 @@ if(choix == 1){
     console.log("Afficher le tableau de bord")
 }
 else if (choix == 2){
-    console.log("Afficher la liste des apprenants")
+    afficherListe(apprenants)
 }
 else if (choix == 3){
-    console.log("Ajouter un apprenant")
+    console.log(ajouterApprenant(apprenants))
 }
 else if (choix == 4){
-    console.log("Consulter un apprenant par identifiant")
+    console.log(rechercherApprenant(apprenants))
 }
 else if (choix == 5){
-    console.log("Ajouter ou modifier le résultat d'une journée")
+    console.log(enregistrerResultat(apprenants))
 }
 else if (choix ==6){
-    console.log("Rechercher un apprenant par nom")
+    console.log(rechercherApprenant(apprenants))
 }
 else if (choix == 7){
-    console.log("Filtrer les apprenants par niveau")
+    console.log(filtrerParNiveau (apprenants))
 }
 else if (choix == 8){
-    console.log("Trier les apprenants par progression décroissante")
+    console.log(trierParProgression(apprenants))
 }
 else if (choix == 9){
-    console.log("Trier les apprenants par ordre alphabétique")
+    console.log(trierParNom(apprenants))
 }
 else if (choix == 0){
-    console.log("Quitter")
+    console.log("au revoir")
 }
-switch (choix){
-    case "1" :
 
-}
