@@ -14,9 +14,10 @@ const {
     afficherListe,
     trierParNom
 } = require("./progression")
-let choix = prompt(`
+let choix
+while (choix != 0){
+choix = prompt(`
 SAS PROGRESS CONSOLE
-
 1. Afficher le tableau de bord
 2. Afficher la liste des apprenants
 3. Ajouter un apprenant
@@ -62,4 +63,5 @@ else if (choix == 0){
 }
 else {
     console.log("choix invalide")
+}
 }
