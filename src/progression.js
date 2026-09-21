@@ -145,7 +145,7 @@ let niveau = ""
 if (progression >= 80){
   niveau = "Solide"
 }
-else if (progression >= 50 && progression <= 79){
+else if (progression >= 50 && progression < 80){
   niveau = "En progression"
 }
 else{
