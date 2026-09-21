@@ -53,7 +53,7 @@ const apprenants = [
   },
   {
     id: 4,
-    nomComplet: "Amira zirari",
+    nomComplet: "Amira Zirari",
     ville: "Tetouan",
     resultats: [
       {

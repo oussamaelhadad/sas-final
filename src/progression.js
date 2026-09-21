@@ -137,6 +137,7 @@ if (apprenant.resultats.length === 0){
 }
 
 let progression = (totaleExercicestermines/totaleExercicesProposes)*100
+let niveau = ""
 
 if (progression >= 80){
   niveau = "Solide"
@@ -145,7 +146,7 @@ else if (progression >= 50 && progression <= 79){
   niveau = "En progression"
 }
 else{
-  niveau = "À renforcer"
+  niveau = "A renforcer"
 }
 
 return {
@@ -245,6 +246,3 @@ module.exports = {
     afficherListe,
     trierParNom
 }
-
-
-    
