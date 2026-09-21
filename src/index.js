@@ -60,4 +60,6 @@ else if (choix == 9){
 else if (choix == 0){
     console.log("au revoir")
 }
-
+else {
+    console.log("choix invalide")
+}

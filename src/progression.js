@@ -174,34 +174,39 @@ function filtrerParNiveau (apprenants){
 }
 
 function trierParProgression (apprenants){
- let resultat = [...apprenants]
   
- for (let i = 0; i < resultat.length - 1; i++){
+ for (let i = 0; i < apprenants.length - 1; i++){
 
-   for (let j = i + 1; j < resultat.length; j++){
+   for (let j = i + 1; j < apprenants.length; j++){
 
-   let progression1 = calculerProgression(resultat[i])
-   let progression2 = calculerProgression(resultat[j])
+   let progression1 = calculerProgression(apprenants[i])
+   let progression2 = calculerProgression(apprenants[j])
 
   if (progression1.progression < progression2.progression){
 
-  let variable = resultat[i]
-   resultat[i] = resultat[j]
-   resultat[j] = variable
+  let variable = apprenants[i]
+   apprenants[i] = apprenants[j]
+   apprenants[j] = variable
   }
   if (progression1.progression == progression2.progression){
   
-    if (resultat[i].nomComplet.toLowerCase() > resultat[j].nomComplet.toLowerCase()){
+    if (apprenants[i].nomComplet.toLowerCase() > apprenants[j].nomComplet.toLowerCase()){
    
-    let variable1 = resultat[j]
-        resultat[j] = resultat[i]
-        resultat[i] = variable1
+    let variable1 = apprenants[j]
+        apprenants[j] = apprenants[i]
+        apprenants[i] = variable1
    }
     
   }
 }
 }
- return resultat
+for(let i = 0; i < apprenants.length; i++){
+   
+  let progression = calculerProgression(apprenants[i])
+    
+  console.log(apprenants[i].nomComplet + " : " + progression.progression + "%")
+  }
+ return apprenants
 }
 
 function afficherListe(apprenants){
@@ -213,20 +218,19 @@ function afficherListe(apprenants){
 }
 
 function trierParNom(apprenants){
-  let resultat = [...apprenants]
  
-  for(let i = 0; i < resultat.length; i++){
+  for(let i = 0; i < apprenants.length; i++){
    
-    for (let j = i+1; j < resultat.length; j++){
+    for (let j = i+1; j < apprenants.length; j++){
      
-      if(resultat[i].nomComplet.toLowerCase() > resultat[j].nomComplet.toLowerCase()){
-        let variable = resultat[i]
-        resultat[i] = resultat[j]
-        resultat[j] = variable
+      if(apprenants[i].nomComplet.toLowerCase() > apprenants[j].nomComplet.toLowerCase()){
+        let variable = apprenants[i]
+        apprenants[i] = apprenants[j]
+        apprenants[j] = variable
       }
     }
   }
-  return resultat
+  return apprenants
 } 
 
 module.exports = {

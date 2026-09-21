@@ -69,6 +69,25 @@ const apprenants = [
         challengeTermine: true
       }
     ]
+  },
+  {
+    id: 5,
+    nomComplet: "Zaid Robio",
+    ville: "Rabat",
+    resultats:[
+      {
+        jour: 1,
+        exercicesTermines: 8,
+        totalExercices: 20,
+        challengeTermine: false
+      },
+      {
+        jour: 2,
+        exercicesTermines: 9,
+        totalExercices: 20,
+        challengeTermine: false
+      }
+    ]
   }
 ];
 
