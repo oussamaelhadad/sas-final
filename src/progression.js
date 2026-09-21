@@ -133,7 +133,10 @@ function calculerProgression (apprenant){
     JournéesRenseignées++
 }
 if (apprenant.resultats.length === 0){
-    return 0;
+    return {
+      progression: 0,
+      niveau: "A renforcer"
+    }
 }
 
 let progression = (totaleExercicestermines/totaleExercicesProposes)*100
