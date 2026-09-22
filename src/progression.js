@@ -45,7 +45,9 @@ return "invalid informatione"
 
 function ajouterApprenant(apprenants) {
   let id = prompt("Entrez l'ID : ")
+ 
   for (let i = 0; i < apprenants.length; i++) {
+    
     if (apprenants[i].id == Number(id)) {
       return "ID existe déjà";
     }
@@ -53,7 +55,7 @@ function ajouterApprenant(apprenants) {
   let nom = prompt("Entrez le nom complet : ")
   let ville = prompt("Entrez la ville : ")
   let nouveauApprenant = {
-    id: id,
+    id: Number(id),
     nomComplet: normaliserNom(nom),
     ville: ville,
     resultats: []
@@ -204,7 +206,7 @@ function trierParProgression (apprenants){
   }
 }
 }
-for(let i = 0; i < apprenants.length; i++){
+for(let i = 0; i < apprenants.length - 1; i++){
    
   let progression = calculerProgression(apprenants[i])
     
